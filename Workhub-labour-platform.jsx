@@ -1065,10 +1065,10 @@ function LanguageSwitcher({ lang, setLang }) {
     <div className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="ks-body inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold"
-        style={{ border: `1.5px solid ${THEME.border}`, color: THEME.navy }}
+        className="ks-body inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm"
+        style={{ border: `2px solid ${THEME.navy}`, color: THEME.navy, fontWeight: 800, backgroundColor: "#FFFFFF" }}
       >
-        <Languages size={15} /> {LANGUAGES.find((l) => l.code === lang)?.label}
+        <Languages size={16} strokeWidth={2.5} /> {LANGUAGES.find((l) => l.code === lang)?.label}
       </button>
       {open ? (
         <div className="absolute right-0 top-11 w-40 rounded-xl bg-white py-1.5 z-30" style={{ boxShadow: "0 12px 32px rgba(16,24,32,0.18)", border: `1px solid ${THEME.border}` }}>
@@ -1077,7 +1077,7 @@ function LanguageSwitcher({ lang, setLang }) {
               key={l.code}
               onClick={() => { setLang(l.code); setOpen(false); }}
               className="ks-body w-full text-left px-3 py-2 text-sm hover:bg-gray-50"
-              style={{ color: l.code === lang ? THEME.amberDark : THEME.ink, fontWeight: l.code === lang ? 700 : 500 }}
+              style={{ color: l.code === lang ? THEME.amberDark : THEME.ink, fontWeight: l.code === lang ? 800 : 600 }}
             >
               {l.label}
             </button>
